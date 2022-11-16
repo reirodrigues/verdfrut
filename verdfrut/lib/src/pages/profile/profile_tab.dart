@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:greenfrut/src/pages/auth/controllers/auth_controller.dart';
 import 'package:greenfrut/src/pages/widgets/custom_text_field.dart';
 import 'package:greenfrut/src/config/app_data.dart' as appData;
 
@@ -9,6 +11,8 @@ class ProfileTab extends StatefulWidget {
   State<ProfileTab> createState() => _ProfileTabState();
 }
 
+final authController = Get.find<AuthController>();
+
 class _ProfileTabState extends State<ProfileTab> {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,9 @@ class _ProfileTabState extends State<ProfileTab> {
         title: const Text('Perfil do usuário'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              authController.signOut();
+            },
             icon: const Icon(Icons.logout_outlined),
           )
         ],
