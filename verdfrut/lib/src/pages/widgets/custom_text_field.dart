@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CustomTextField extends StatefulWidget {
-  const CustomTextField(
-      {super.key,
-      required this.icon,
-      required this.label,
-      this.isSecret = false,
-      this.inputFormatters,
-      this.textInputType,
-      this.initialValue,
-      this.isReadOnly = false,
-      this.validator,
-      this.controller,
-      this.onSaved});
+  const CustomTextField({
+    super.key,
+    required this.icon,
+    required this.label,
+    this.isSecret = false,
+    this.inputFormatters,
+    this.textInputType,
+    this.initialValue,
+    this.isReadOnly = false,
+    this.validator,
+    this.controller,
+    this.onSaved,
+    this.formFieldKey,
+  });
 
   final bool isReadOnly;
   final String? initialValue;
@@ -25,6 +27,7 @@ class CustomTextField extends StatefulWidget {
   final String? Function(String? value)? validator;
   final void Function(String? value)? onSaved;
   final TextEditingController? controller;
+  final GlobalKey<FormFieldState>? formFieldKey;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -45,6 +48,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
+        key: widget.formFieldKey,
         controller: widget.controller,
         readOnly: widget.isReadOnly,
         initialValue: widget.initialValue,

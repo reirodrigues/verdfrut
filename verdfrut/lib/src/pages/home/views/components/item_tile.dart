@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:greenfrut/src/models/item_model.dart';
 import 'package:greenfrut/src/services/utils_services.dart';
-import '../../../config/custom_colors.dart';
-import '../../product/product_screen.dart';
+import '../../../../config/custom_colors.dart';
+import '../../../product/product_screen.dart';
 
 class ItemTile extends StatefulWidget {
   const ItemTile({
@@ -71,7 +71,7 @@ class _ItemTileState extends State<ItemTile> {
                   Expanded(
                     child: Hero(
                       tag: widget.item.imgUrl,
-                      child: Image.asset(
+                      child: Image.network(
                         widget.item.imgUrl,
                         key: imageGk,
                       ),

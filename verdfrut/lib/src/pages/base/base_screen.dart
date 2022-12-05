@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:greenfrut/src/pages/cart/cart_tab.dart';
-import 'package:greenfrut/src/pages/home/home_tab.dart';
+import 'package:greenfrut/src/pages/home/views/home_tab.dart';
 import 'package:greenfrut/src/pages/orders/orders_tab.dart';
 import 'package:greenfrut/src/pages/profile/profile_tab.dart';
 

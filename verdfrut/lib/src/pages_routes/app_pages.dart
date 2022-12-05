@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:greenfrut/src/pages/auth/views/sign_in_screen.dart';
 import 'package:greenfrut/src/pages/auth/views/sign_up_screen.dart';
 import 'package:greenfrut/src/pages/base/base_screen.dart';
+import 'package:greenfrut/src/pages/home/binding/home_binding.dart';
 import 'package:greenfrut/src/pages/splash/splash_screen.dart';
 
 abstract class AppPages {
@@ -21,6 +22,9 @@ abstract class AppPages {
     GetPage(
       page: () => const BaseScreen(),
       name: PagesRoutes.baseRoute,
+      bindings: [
+        HomeBindind(),
+      ],
     ),
   ];
 }
